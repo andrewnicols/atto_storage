@@ -1,0 +1,8 @@
+{
+    "moodle-atto_storage-button": {
+        "requires": [
+            "moodle-editor_atto-plugin",
+            "cache-offline"
+        ]
+    }
+}

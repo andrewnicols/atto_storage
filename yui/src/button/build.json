@@ -1,0 +1,10 @@
+{
+    "name": "moodle-atto_storage-button",
+    "builds": {
+        "moodle-atto_storage-button": {
+            "jsfiles": [
+                "button.js"
+            ]
+        }
+    }
+}
