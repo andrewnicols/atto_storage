@@ -34,3 +34,17 @@ function atto_storage_strings_for_js() {
     $PAGE->requires->strings_for_js(array('warningmessage',
             ), 'atto_storage');
 }
+
+/**
+ * Set params for this plugin.
+ *
+ * @param string $elementid
+ * @param stdClass $options - the options for the editor, including the context.
+ * @param stdClass $fpoptions - unused.
+ */
+function atto_storage_params_for_js($elementid, $options, $fpoptions) {
+    global $USER;
+    return array(
+        'userid' => $USER->id,
+    );
+}

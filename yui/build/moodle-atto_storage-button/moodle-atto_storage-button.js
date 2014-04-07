@@ -78,7 +78,7 @@ Y.namespace('M.atto_storage').Button = Y.Base.create('button', Y.M.editor_atto.E
         }
 
         this._storageSpace = new Y.CacheOffline({
-            sandbox: sandbox
+            sandbox: this.get('userid') + '_' + sandbox
         });
 
         // Update the cache on change.
@@ -123,6 +123,7 @@ Y.namespace('M.atto_storage').Button = Y.Base.create('button', Y.M.editor_atto.E
             content.one('.discard').on('click', function() {
                 overlay.hide()
                         .destroy();
+                this._clearCache();
             }, this);
 
             content.one('.preview').setStyle('maxHeight', parseInt(height, 10) - 90 + 'px');
@@ -148,6 +149,12 @@ Y.namespace('M.atto_storage').Button = Y.Base.create('button', Y.M.editor_atto.E
      */
     _clearCache: function() {
         this._storageSpace.add(this._elementid, null);
+    }
+}, {
+    ATTRS: {
+        userid: {
+            value: null
+        }
     }
 });
 
